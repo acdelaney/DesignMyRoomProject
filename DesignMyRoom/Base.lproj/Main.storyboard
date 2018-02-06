@@ -1,24 +1,458 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OZo-sJ-4Zo">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="xgn-Dh-gLQ">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="OZo-sJ-4Zo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WPC-2X-n2i">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7zN-Qf-gz7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKJ-Cs-VXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-774" y="134"/>
+        </scene>
+        <!--Room TableVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RoomTableVC" customModule="DesignMyRoom" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xH8-qU-pXt" userLabel="Translucent Background">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fW7-bS-Z4Q" userLabel="RoomInputsView">
+                                <rect key="frame" x="37" y="233" width="300" height="220"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ls1-KT-CYZ">
+                                        <rect key="frame" x="10" y="10" width="280" height="200"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="jWx-zX-v2m">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="110"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your Room!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJ8-8x-d8l">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nx3-Ru-CT5" customClass="roundedCornerTF" customModule="DesignMyRoom" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="40" width="280" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="b6C-i2-Rm9"/>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="tBM-w9-pme"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the type of room" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfN-u5-4fk">
+                                                        <rect key="frame" x="0.0" y="80" width="280" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="oIA-ox-Zn2">
+                                                <rect key="frame" x="79.5" y="120" width="121" height="80"/>
+                                                <subviews>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qZ5-6x-dqE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121" height="31"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="121" id="7CT-Kz-gL6"/>
+                                                            <constraint firstAttribute="height" constant="30" id="Yyk-xD-Ukx"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Boy"/>
+                                                            <segment title="Girl"/>
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1K-L2-AWV" customClass="roundedCornerButton" customModule="DesignMyRoom" customModuleProvider="target">
+                                                        <rect key="frame" x="18.5" y="50" width="84" height="30"/>
+                                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="m0i-wY-g5K"/>
+                                                            <constraint firstAttribute="height" constant="30" id="nd8-BC-3x5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <state key="normal" title="Create">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="createNewRoom:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UL7-8L-6E7"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ls1-KT-CYZ" firstAttribute="leading" secondItem="fW7-bS-Z4Q" secondAttribute="leading" constant="10" id="AKm-jx-f5n"/>
+                                    <constraint firstItem="ls1-KT-CYZ" firstAttribute="top" secondItem="fW7-bS-Z4Q" secondAttribute="top" constant="10" id="Ozi-Hl-bnV"/>
+                                    <constraint firstAttribute="trailing" secondItem="ls1-KT-CYZ" secondAttribute="trailing" constant="10" id="Y65-fi-Zie"/>
+                                    <constraint firstAttribute="bottom" secondItem="ls1-KT-CYZ" secondAttribute="bottom" constant="10" id="gJZ-sZ-UOU"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBN-OF-9SJ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RoomCell" textLabel="FZS-sx-lgF" detailTextLabel="n2h-gO-21r" style="IBUITableViewCellStyleSubtitle" id="huY-Sd-ArY">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="huY-Sd-ArY" id="a08-aU-mQy">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FZS-sx-lgF">
+                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2h-gO-21r">
+                                                    <rect key="frame" x="15" y="25.5" width="33" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nVx-Df-5BK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="3Sx-bp-Djy">
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="7Xh-nn-rdg">
+                                            <connections>
+                                                <action selector="cancelNewRoom:" destination="BYZ-38-t0r" id="K7Y-2G-Yax"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Create a Room" id="lkN-Zb-xKp">
+                                            <connections>
+                                                <action selector="bringRoomInputsForward:" destination="BYZ-38-t0r" id="w8a-26-5iw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fW7-bS-Z4Q" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="6bM-ei-W7q"/>
+                            <constraint firstItem="fW7-bS-Z4Q" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="BN1-vL-tZo"/>
+                            <constraint firstItem="xH8-qU-pXt" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="DND-rV-DW3"/>
+                            <constraint firstItem="xH8-qU-pXt" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="H2F-cx-z5t"/>
+                            <constraint firstItem="SBN-OF-9SJ" firstAttribute="top" secondItem="nVx-Df-5BK" secondAttribute="bottom" id="JkF-2a-zWC"/>
+                            <constraint firstItem="xH8-qU-pXt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LIU-Bb-hvz"/>
+                            <constraint firstItem="SBN-OF-9SJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="P6E-TD-ANL"/>
+                            <constraint firstAttribute="trailing" secondItem="nVx-Df-5BK" secondAttribute="trailing" id="XjA-DZ-Wfr"/>
+                            <constraint firstItem="xH8-qU-pXt" firstAttribute="top" secondItem="nVx-Df-5BK" secondAttribute="bottom" id="cFS-BU-H8U"/>
+                            <constraint firstItem="SBN-OF-9SJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="l0H-L8-DkW"/>
+                            <constraint firstItem="nVx-Df-5BK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lVx-NP-Hb1"/>
+                            <constraint firstItem="nVx-Df-5BK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nRc-ms-mZV"/>
+                            <constraint firstItem="SBN-OF-9SJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="r1Y-ob-9t2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="UdW-rP-fOR"/>
+                    <connections>
+                        <outlet property="cancelNavButton" destination="7Xh-nn-rdg" id="sxc-je-ZTa"/>
+                        <outlet property="createNavButton" destination="lkN-Zb-xKp" id="Gw6-ra-eC4"/>
+                        <outlet property="createRoomButton" destination="P1K-L2-AWV" id="ea1-k4-Oqu"/>
+                        <outlet property="genderControl" destination="qZ5-6x-dqE" id="h1k-Qa-3J9"/>
+                        <outlet property="roomInputsView" destination="fW7-bS-Z4Q" id="Bx0-9X-ssb"/>
+                        <outlet property="roomNameTextfield" destination="Nx3-Ru-CT5" id="gCk-AF-eeK"/>
+                        <outlet property="roomTableView" destination="SBN-OF-9SJ" id="5xp-y4-9ta"/>
+                        <outlet property="translucentBackground" destination="xH8-qU-pXt" id="Nqh-GP-FWU"/>
+                        <segue destination="CzO-tq-fzI" kind="show" identifier="displayRoom" id="wmv-yb-6X8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--RoomVC-->
+        <scene sceneID="jrO-H3-ICf">
+            <objects>
+                <viewController id="CzO-tq-fzI" customClass="RoomVC" customModule="DesignMyRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ndm-7z-GBG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EUc-Hb-ylm" userLabel="Room">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5h9-vc-ued">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="9U2-3A-g77">
+                                        <barButtonItem key="leftBarButtonItem" title="Rooms" id="Yog-9C-RGi">
+                                            <connections>
+                                                <action selector="backToRoom:" destination="CzO-tq-fzI" id="rl1-4a-PBa"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Qxc-7K-qV5">
+                                <rect key="frame" x="20" y="94" width="335" height="262"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Ttp-5G-8Za">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="127"/>
+                                        <subviews>
+                                            <imageView alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XL8-PU-WvR" userLabel="Poster1">
+                                                <rect key="frame" x="0.0" y="0.0" width="150" height="127"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="id6-hK-pUC" appends="YES" id="1ra-It-SQE"/>
+                                                </connections>
+                                            </imageView>
+                                            <imageView alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oB0-5w-H0t" userLabel="Poster2">
+                                                <rect key="frame" x="158" y="0.0" width="177" height="127"/>
+                                                <gestureRecognizers/>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="5ma-Kw-9gh" appends="YES" id="5QL-Rd-Jtf"/>
+                                                </connections>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="127" id="4Zy-2l-rvi"/>
+                                        </constraints>
+                                    </stackView>
+                                    <imageView alpha="0.40000000000000002" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYh-Dd-HJZ" userLabel="Poster3">
+                                        <rect key="frame" x="93" y="135" width="149" height="127"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="127" id="pqn-03-PJG"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="zid-WS-yMX" appends="YES" id="i3t-xr-xy1"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Ttp-5G-8Za" firstAttribute="leading" secondItem="Qxc-7K-qV5" secondAttribute="leading" id="70n-n3-yNV"/>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="262" id="vI0-5D-xmy"/>
+                                    <constraint firstItem="rYh-Dd-HJZ" firstAttribute="leading" secondItem="Qxc-7K-qV5" secondAttribute="leading" constant="93" id="zRl-qr-hWr"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5h9-vc-ued" firstAttribute="top" secondItem="ndm-7z-GBG" secondAttribute="top" id="1gP-E8-Cgk"/>
+                            <constraint firstItem="5h9-vc-ued" firstAttribute="leading" secondItem="GhC-nk-3ma" secondAttribute="leading" id="ETD-Kd-PiH"/>
+                            <constraint firstItem="GhC-nk-3ma" firstAttribute="bottom" secondItem="EUc-Hb-ylm" secondAttribute="bottom" id="Vqo-BU-EdU"/>
+                            <constraint firstAttribute="top" secondItem="5h9-vc-ued" secondAttribute="bottom" constant="-44" id="c6f-Sf-fok"/>
+                            <constraint firstItem="GhC-nk-3ma" firstAttribute="trailing" secondItem="EUc-Hb-ylm" secondAttribute="trailing" id="gPK-dA-8aI"/>
+                            <constraint firstItem="GhC-nk-3ma" firstAttribute="bottom" secondItem="Qxc-7K-qV5" secondAttribute="bottom" constant="311" id="h7y-Ek-dVS"/>
+                            <constraint firstItem="Qxc-7K-qV5" firstAttribute="top" secondItem="5h9-vc-ued" secondAttribute="bottom" constant="50" id="lkb-3R-504"/>
+                            <constraint firstItem="Qxc-7K-qV5" firstAttribute="leading" secondItem="GhC-nk-3ma" secondAttribute="leading" constant="20" id="m65-JN-eV3"/>
+                            <constraint firstItem="5h9-vc-ued" firstAttribute="trailing" secondItem="GhC-nk-3ma" secondAttribute="trailing" id="oPd-ZW-gT0"/>
+                            <constraint firstItem="EUc-Hb-ylm" firstAttribute="leading" secondItem="GhC-nk-3ma" secondAttribute="leading" id="q3g-s9-c0h"/>
+                            <constraint firstItem="GhC-nk-3ma" firstAttribute="trailing" secondItem="Qxc-7K-qV5" secondAttribute="trailing" constant="20" id="r7E-Xd-3WD"/>
+                            <constraint firstItem="EUc-Hb-ylm" firstAttribute="top" secondItem="GhC-nk-3ma" secondAttribute="top" constant="24" id="urY-iM-dz9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GhC-nk-3ma"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="poster1Image" destination="XL8-PU-WvR" id="w81-uq-sM3"/>
+                        <outlet property="poster2Image" destination="oB0-5w-H0t" id="IfP-Z6-Fto"/>
+                        <outlet property="poster3Image" destination="rYh-Dd-HJZ" id="e8b-Em-Rv2"/>
+                        <outlet property="roomImage" destination="EUc-Hb-ylm" id="X0H-Zl-Xbe"/>
+                        <segue destination="BXr-Xy-YlA" kind="show" identifier="displayPosterBin" id="UN7-Gp-gV0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vCk-tb-4zB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="id6-hK-pUC" userLabel="Poster1Tap">
+                    <connections>
+                        <action selector="poster1TransitionToBin:" destination="CzO-tq-fzI" id="MKg-h7-alk"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="5ma-Kw-9gh" userLabel="Poster2Tap">
+                    <connections>
+                        <action selector="poster2TransitionToBin:" destination="CzO-tq-fzI" id="CHS-5X-BK2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="zid-WS-yMX" userLabel="Poster3Tap">
+                    <connections>
+                        <action selector="poster3TransitionToBin:" destination="CzO-tq-fzI" id="9wE-7A-Kzv"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="916" y="133.5832083958021"/>
+        </scene>
+        <!--Poster BinVC-->
+        <scene sceneID="NrQ-fm-hD6">
+            <objects>
+                <viewController id="BXr-Xy-YlA" customClass="PosterBinVC" customModule="DesignMyRoom" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q93-6P-EGS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="qfi-0D-Hcj">
+                                <rect key="frame" x="0.0" y="159" width="375" height="464"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ycc-af-UQn">
+                                    <size key="itemSize" width="124" height="98"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="downloadedPoster" id="laY-pu-o51" customClass="PosterCollectionViewCell" customModule="DesignMyRoom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="98"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="124" height="98"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wcn-mB-ZSx">
+                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="98"/>
+                                                </imageView>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="2Vo-y9-NN1">
+                                                    <rect key="frame" x="52" y="39" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Wcn-mB-ZSx" firstAttribute="top" secondItem="laY-pu-o51" secondAttribute="top" id="0tK-vY-fly"/>
+                                            <constraint firstItem="Wcn-mB-ZSx" firstAttribute="centerY" secondItem="2Vo-y9-NN1" secondAttribute="centerY" id="6hc-G3-i4B"/>
+                                            <constraint firstItem="2Vo-y9-NN1" firstAttribute="leading" secondItem="laY-pu-o51" secondAttribute="leadingMargin" constant="44" id="6xs-cf-6tC"/>
+                                            <constraint firstItem="Wcn-mB-ZSx" firstAttribute="leading" secondItem="laY-pu-o51" secondAttribute="leading" id="7b8-OL-0Ja"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="2Vo-y9-NN1" secondAttribute="trailing" constant="44" id="7sP-wP-Mfw"/>
+                                            <constraint firstItem="2Vo-y9-NN1" firstAttribute="top" secondItem="laY-pu-o51" secondAttribute="topMargin" constant="31" id="MeF-v2-HIb"/>
+                                            <constraint firstItem="Wcn-mB-ZSx" firstAttribute="centerX" secondItem="2Vo-y9-NN1" secondAttribute="centerX" id="NS1-6b-hQF"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wcn-mB-ZSx" secondAttribute="trailing" id="gpY-di-Pax"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="2Vo-y9-NN1" secondAttribute="bottom" constant="31" id="nAR-yj-80z"/>
+                                            <constraint firstItem="Wcn-mB-ZSx" firstAttribute="centerX" secondItem="laY-pu-o51" secondAttribute="centerX" id="ugS-fG-zdP"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wcn-mB-ZSx" secondAttribute="bottom" id="xjX-pj-Y2M"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="downloadActivityIndicator" destination="2Vo-y9-NN1" id="sPQ-G8-nKL"/>
+                                            <outlet property="posterImage" destination="Wcn-mB-ZSx" id="HQF-OI-Icc"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ko8-Tu-zZq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="L6a-1d-0jE">
+                                        <barButtonItem key="leftBarButtonItem" title="Back to Room" id="PfH-z7-0Hc">
+                                            <connections>
+                                                <action selector="backToRoomTransition:" destination="BXr-Xy-YlA" id="sma-k3-ZFd"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sgs-RK-Yo4">
+                                <rect key="frame" x="0.0" y="44" width="125" height="115"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="125" id="vHf-zc-FkL"/>
+                                </constraints>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-ra-tud">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7j2-fO-C0t"/>
+                                    <barButtonItem title="Add To Room" id="Fmx-vH-Iob">
+                                        <connections>
+                                            <action selector="addPosterToRoom:" destination="BXr-Xy-YlA" id="17e-r1-qWO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="DEq-0L-Kqu"/>
+                                </items>
+                            </toolbar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="AHP-7H-BDc">
+                                <rect key="frame" x="146" y="64" width="209" height="75"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for Posters!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3tK-f6-KyJ" customClass="roundedCornerTF" customModule="DesignMyRoom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="209" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="INZ-5b-M2U"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMr-RJ-dRC" customClass="roundedCornerButton" customModule="DesignMyRoom" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="45" width="209" height="30"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Search">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="searchForPhotos:" destination="BXr-Xy-YlA" eventType="touchUpInside" id="SJH-CW-maW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KBm-vm-VwW">
+                                <rect key="frame" x="240.5" y="114" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="AHP-7H-BDc" firstAttribute="centerY" secondItem="sgs-RK-Yo4" secondAttribute="centerY" id="1C2-8x-5xP"/>
+                            <constraint firstItem="OxI-L5-N2g" firstAttribute="trailing" secondItem="AHP-7H-BDc" secondAttribute="trailing" constant="20" id="2DC-va-CMo"/>
+                            <constraint firstItem="sgs-RK-Yo4" firstAttribute="leading" secondItem="OxI-L5-N2g" secondAttribute="leading" id="2Xb-ZE-Zg9"/>
+                            <constraint firstItem="ko8-Tu-zZq" firstAttribute="leading" secondItem="OxI-L5-N2g" secondAttribute="leading" id="7Lc-sK-RSx"/>
+                            <constraint firstItem="sgs-RK-Yo4" firstAttribute="top" secondItem="ko8-Tu-zZq" secondAttribute="bottom" id="7Tv-Po-JhE"/>
+                            <constraint firstItem="BlE-ra-tud" firstAttribute="bottom" secondItem="OxI-L5-N2g" secondAttribute="bottom" id="HR5-YJ-ZBv"/>
+                            <constraint firstItem="qfi-0D-Hcj" firstAttribute="top" secondItem="sgs-RK-Yo4" secondAttribute="bottom" id="NrV-lN-ffs"/>
+                            <constraint firstItem="BlE-ra-tud" firstAttribute="leading" secondItem="OxI-L5-N2g" secondAttribute="leading" id="Pcy-Jt-0vX"/>
+                            <constraint firstItem="ko8-Tu-zZq" firstAttribute="trailing" secondItem="OxI-L5-N2g" secondAttribute="trailing" id="Q4A-ns-XDQ"/>
+                            <constraint firstItem="AHP-7H-BDc" firstAttribute="top" secondItem="ko8-Tu-zZq" secondAttribute="bottom" constant="20" id="Q4y-5c-kli"/>
+                            <constraint firstItem="AHP-7H-BDc" firstAttribute="leading" secondItem="sgs-RK-Yo4" secondAttribute="trailing" constant="21" id="SrE-WF-R6i"/>
+                            <constraint firstItem="qfi-0D-Hcj" firstAttribute="trailing" secondItem="OxI-L5-N2g" secondAttribute="trailing" id="Trq-Hf-1sh"/>
+                            <constraint firstItem="KBm-vm-VwW" firstAttribute="centerX" secondItem="IMr-RJ-dRC" secondAttribute="centerX" id="VGL-2t-8xP"/>
+                            <constraint firstItem="KBm-vm-VwW" firstAttribute="centerY" secondItem="IMr-RJ-dRC" secondAttribute="centerY" id="arx-uB-doX"/>
+                            <constraint firstItem="BlE-ra-tud" firstAttribute="top" secondItem="qfi-0D-Hcj" secondAttribute="bottom" id="iYX-cz-rHi"/>
+                            <constraint firstItem="qfi-0D-Hcj" firstAttribute="leading" secondItem="OxI-L5-N2g" secondAttribute="leading" id="nM4-nC-rXu"/>
+                            <constraint firstItem="ko8-Tu-zZq" firstAttribute="top" secondItem="q93-6P-EGS" secondAttribute="top" id="pBy-U1-c8u"/>
+                            <constraint firstItem="BlE-ra-tud" firstAttribute="trailing" secondItem="OxI-L5-N2g" secondAttribute="trailing" id="yhD-NF-BZo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OxI-L5-N2g"/>
+                    </view>
+                    <connections>
+                        <outlet property="addToRoomButton" destination="Fmx-vH-Iob" id="BgG-3J-j78"/>
+                        <outlet property="downloadActivity" destination="KBm-vm-VwW" id="dTF-rD-MHX"/>
+                        <outlet property="posterBinCollectionView" destination="qfi-0D-Hcj" id="BkV-Cj-dAG"/>
+                        <outlet property="searchButton" destination="IMr-RJ-dRC" id="8PB-Mn-xdm"/>
+                        <outlet property="searchTextField" destination="3tK-f6-KyJ" id="d61-0j-8e0"/>
+                        <outlet property="tappedPosterImage" destination="sgs-RK-Yo4" id="dd6-Rs-b33"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E91-YB-wZi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>

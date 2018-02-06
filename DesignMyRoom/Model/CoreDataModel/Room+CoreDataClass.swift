@@ -1,0 +1,40 @@
+//
+//  Room+CoreDataClass.swift
+//  DesignMyRoom
+//
+//  Created by Andrew Delaney on 12/30/17.
+//  Copyright © 2017 Andrew Delaney. All rights reserved.
+//
+//
+
+import Foundation
+import CoreData
+
+
+public class Room: NSManagedObject {
+
+    // MARK: Initializer
+    
+    convenience init(name: String, gender: String, context: NSManagedObjectContext) {
+        
+        // An EntityDescription is an object that has access to all
+        // the information you provided in the Entity part of the model
+        // you need it to create an instance of this class.
+        if let ent = NSEntityDescription.entity(forEntityName: "Room", in: context) {
+            self.init(entity: ent, insertInto: context)
+            self.name = name
+            self.gender = gender
+            self.poster1 = nil
+            self.poster2 = nil
+            self.poster3 = nil
+            self.createDate = NSDate()
+            
+        } else {
+            
+            fatalError("Unable to find Entity name!")
+        }
+    }
+    
+
+    
+}
