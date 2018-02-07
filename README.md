@@ -3,8 +3,9 @@
 The purpose of Design My Room is to be a fun app where the user can create a room and decorate its wall with posters from images downloaded from Flickr.  
 
 ## Installation
-
-> Clone using https://github.com/acdelaney/DesignMyRoomProject.git
+```git
+ git clone https://github.com/acdelaney/DesignMyRoomProject.git 
+```
 
 ## Usage
 
